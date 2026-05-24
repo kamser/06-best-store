@@ -8,9 +8,19 @@ function App() {
   const [products, setProducts] = useState(initialProducts)
   const [filters, setFilters] = useState({
     category: 'all',
-    minPrice: 0
+    minPrice: 100
   })
-  
+
+  const filterProducts = (products) => {
+    return products.filter(product => {
+      return(
+        product.price >= filters.minPrice
+        &&
+        (filters.category === 'all' || product.category === filters.category)
+      )
+    })
+  }
+
   return (
     <>
       <h1>Best store app</h1>
