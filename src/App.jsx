@@ -1,11 +1,16 @@
 import { useState } from 'react'
 
-import staticData from './mock/products.json'
+import {products as initialProducts} from './mock/products.json'
 import { Products } from './components/Products.jsx'
 
 function App() {
 
-  const {products} = staticData
+  const [products, setProducts] = useState(initialProducts)
+  const [filters, setFilters] = useState({
+    category: 'all',
+    minPrice: 0
+  })
+  
   return (
     <>
       <h1>Best store app</h1>
