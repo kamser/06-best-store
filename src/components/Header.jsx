@@ -1,9 +1,9 @@
 import { Filters } from "./Filters.jsx"
-export function Header(){
+export function Header({changeFilters}){
     return (
         <header>
             <h1>Best React Shop</h1>
-            <Filters/>
+            <Filters onChange={changeFilters}/>
         </header>
     )
 }
