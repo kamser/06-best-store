@@ -21,10 +21,12 @@ function App() {
     })
   }
 
+  const filteredProducts = filterProducts(products)
+
   return (
     <>
       <h1>Best store app</h1>
-      <Products products={products}></Products>
+      <Products products={filteredProducts}></Products>
     </>
   )
 }
