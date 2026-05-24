@@ -1,16 +1,16 @@
-# React + Vite
+This is a project where we going to create a basic store following the next steps:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ecommerce
 
-Currently, two official plugins are available:
+ - Muestra una lista de productos que vienen de un JSON
+ - Añade un filtro por categoría
+ - Añade un filtro por precio
+ - Haz uso de useContext para evitar pasar props innecesarias.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Carrito:
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ - Haz que se puedan añadir los productos a un carrito.
+ - Haz que se puedan eliminar los productos del carrito.
+ - Haz que se puedan modificar la cantidad de productos del carrito.
+ - Sincroniza los cambios del carrito con la lista de productos.
+ - Guarda en un localStorage el carrito para que se recupere al recargar la página. (da puntos)
