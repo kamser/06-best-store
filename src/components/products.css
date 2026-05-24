@@ -7,10 +7,11 @@
 
 .products ul {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(
-    auto-fit,
+    auto-fill,
     minmax(
-      150px,
+      200px,
       1fr
     )
   );
