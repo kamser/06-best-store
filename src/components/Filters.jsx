@@ -3,12 +3,10 @@ import './filters.css'
 import { FiltersContext } from '../context/filtersContext'
 export function Filters(){
 
-    const [minPrice, setMinPrice] = useState(0)
-
     const minPriceFilterId = useId()
     const categoryFilterId = useId()
 
-    const {setFilters} = useContext(FiltersContext)
+    const {filters, setFilters} = useContext(FiltersContext)
 
     const handleChangeMinPrice = (event) => {
         setMinPrice(event.target.value)
@@ -37,8 +35,9 @@ export function Filters(){
                 min='0'
                 max='1000'
                 onChange={handleChangeMinPrice}
+                value={filters.minPrice}
                  />
-                 <span>{minPrice}</span>
+                 <span>{filters.minPrice}</span>
             </div>
 
             <div>
