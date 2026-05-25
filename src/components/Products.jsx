@@ -3,7 +3,7 @@ import './products.css'
 import { useCart } from "../hooks/useCart.jsx"
 
 export function Products({products}){
-    const {cart, addToCart} = useCart()
+    const {cart, addToCart, removeFromCart} = useCart()
 
     const checkProductInCart = (id) =>{
         return cart.find((item) => item.id === id)
@@ -27,8 +27,12 @@ export function Products({products}){
                                 </div>
                                 <button 
                                     onClick={() => {
-                                        addToCart(product)
-                                        }}>
+                                        isProductInCart
+                                        ? removeFromCart(product)
+                                        : addToCart(product)
+                                        }}
+                                    style={{ backgroundColor: isProductInCart ? 'red' : '#09f' }}
+                                >
                                     {
                                         isProductInCart
                                             ? <RemoveFromCartIcon />

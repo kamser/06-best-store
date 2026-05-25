@@ -23,8 +23,18 @@ export function CartProvider({children}){
                 }
             ]
         ))
+    }
 
+    const removeFromCart = (product) => {
+        const productInCartIndex = cart.findIndex(item => item.id === product.id)
 
+        if(productInCartIndex >= 0){
+            const updatedCart = structuredClone(cart)
+            updatedCart.splice(productInCartIndex, 1)
+            setCart([
+                ...updatedCart
+            ])
+        }
     }
 
     const clearCart = () => {
@@ -36,7 +46,8 @@ export function CartProvider({children}){
             value={{
                 cart,
                 setCart,
-                addToCart
+                addToCart,
+                removeFromCart
             }}
         >
             {children}
