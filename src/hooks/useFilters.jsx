@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useContext } from "react"
 import { FiltersContext } from "../context/filtersContext.jsx"
 
 export function useFilters(){

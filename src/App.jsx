@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 import { useFilters } from './hooks/useFilters.jsx'
 
 import {products as initialProducts} from './mock/products.json'
