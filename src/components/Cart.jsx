@@ -1,4 +1,6 @@
 import { useId } from "react";
+
+import './cart.css'
 import { CartIcon, ClearCartIcon } from "./Icons";
 
 export function Cart(){
