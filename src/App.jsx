@@ -11,10 +11,9 @@ import { Footer } from './components/Footer.jsx'
 
 function App() {
 
-  const [products] = useState(initialProducts)
-  const {filterProducts, setFilters} = useFilters()
+  const {filterProducts} = useFilters()
 
-  const filteredProducts = filterProducts(products)
+  const filteredProducts = filterProducts(initialProducts)
 
   return (
     <>
