@@ -9,7 +9,6 @@ export function Filters(){
     const {filters, setFilters} = useContext(FiltersContext)
 
     const handleChangeMinPrice = (event) => {
-        setMinPrice(event.target.value)
         setFilters(previousState => ({
             ...previousState,
             minPrice: event.target.value
