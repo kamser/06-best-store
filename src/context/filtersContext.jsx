@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const FiltersContext = createContext()
 
 export function FiltersProvider ({children}){
-    const [filters, setFiltersTest] = useState({
+    const [filters, setFilters] = useState({
         category: 'all',
         minPrice: 0
     })
@@ -11,7 +11,7 @@ export function FiltersProvider ({children}){
         <FiltersContext.Provider
             value={{
                 filters,
-                setFiltersTest
+                setFilters
             }}
         >
             {children}

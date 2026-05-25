@@ -8,11 +8,11 @@ export function Filters(){
     const minPriceFilterId = useId()
     const categoryFilterId = useId()
 
-    const {setFiltersTest} = useContext(FiltersContext)
+    const {setFilters} = useContext(FiltersContext)
 
     const handleChangeMinPrice = (event) => {
         setMinPrice(event.target.value)
-        setFiltersTest(previousState => ({
+        setFilters(previousState => ({
             ...previousState,
             minPrice: event.target.value
         })
@@ -21,7 +21,7 @@ export function Filters(){
 
     const handleChangeCategory = (event) => {
         const newCategory = event.target.value
-        setFiltersTest(previousState => ({
+        setFilters(previousState => ({
             ...previousState,
             category: newCategory
         }))
