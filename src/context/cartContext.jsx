@@ -6,9 +6,9 @@ const initialState = []
 
 const reducer = (state, action) => {
     const {type, payload} = action
+    const {id} = payload
     switch(type){
         case 'ADD_TO_CART': {
-            const {id} = payload
             const productInCartIndex = state.findIndex((item) => item.id === id)
 
             if(productInCartIndex >= 0){
@@ -25,8 +25,24 @@ const reducer = (state, action) => {
                     }
                 ]
         }
-        case 'REMOVE_FROM_CART': {}
-        case 'CLEAR_CART': {}
+        case 'REMOVE_FROM_CART': {
+            const productInCartIndex = state.findIndex(item => item.id === id)
+
+            if(productInCartIndex >= 0){
+                const newCart = structuredClone(state)
+                newCart.splice(productInCartIndex, 1)
+                return [
+                    ...newCart
+                ]
+            }
+            break;
+        }
+        case 'CLEAR_CART': {
+            return initialState
+        }
+        default: {
+            return []
+        }
     }
 }
 
@@ -53,21 +69,21 @@ export function CartProvider({children}){
     //     ))
     // }
 
-    const removeFromCart = (product) => {
-        const productInCartIndex = cart.findIndex(item => item.id === product.id)
+    // const removeFromCart = (product) => {
+    //     const productInCartIndex = cart.findIndex(item => item.id === product.id)
 
-        if(productInCartIndex >= 0){
-            const updatedCart = structuredClone(cart)
-            updatedCart.splice(productInCartIndex, 1)
-            setCart([
-                ...updatedCart
-            ])
-        }
-    }
+    //     if(productInCartIndex >= 0){
+    //         const updatedCart = structuredClone(cart)
+    //         updatedCart.splice(productInCartIndex, 1)
+    //         setCart([
+    //             ...updatedCart
+    //         ])
+    //     }
+    // }
 
-    const clearCart = () => {
-        setCart([])
-    }
+    // const clearCart = () => {
+    //     setCart([])
+    // }
 
     return(
         <CartContext.Provider
