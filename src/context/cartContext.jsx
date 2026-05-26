@@ -14,6 +14,8 @@ export function CartProvider({children}){
             return setCart(updatedCart)
         }
 
+        console.log(product)
+
         setCart(prevState => (
             [
                 ...prevState,

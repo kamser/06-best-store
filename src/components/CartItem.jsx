@@ -1,17 +1,17 @@
 
-export function CartItem({thumbnail, description, name, price, quantity, addToCard}){
+export function CartItem({product, addToCard}){
     return(
         <>
-            <img src={thumbnail} alt={description} />
+            <img src={product.thumbnail} alt={product.description} />
             <div>
-                <strong>{name}</strong> - ${price}
+                <strong>{product.name}</strong> - ${product.price}
             </div>
 
             <footer>
                 <small>
-                    Qty: {quantity}
+                    Qty: {product.quantity}
                 </small>
-                <button onClick={addToCard}>+</button>
+                <button onClick={() => addToCard(product)}>+</button>
             </footer>
         </>
     )

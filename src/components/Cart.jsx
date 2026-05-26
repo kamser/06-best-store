@@ -19,13 +19,9 @@ export function Cart(){
             <aside className="cart">
                 <ul>
                     { cart.map(item => (
-                        <li>
+                        <li key={item.sku}>
                             <CartItem 
-                                thumbnail={item.thumbnail}
-                                description={item.description}
-                                name={item.title}
-                                price={item.price}
-                                quantity={item.quantity}
+                                product={item}
                                 addToCard={addToCart} 
                             />
                         </li>
