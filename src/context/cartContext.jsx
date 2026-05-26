@@ -47,7 +47,8 @@ export function CartProvider({children}){
                 cart,
                 setCart,
                 addToCart,
-                removeFromCart
+                removeFromCart,
+                clearCart
             }}
         >
             {children}
